@@ -1,0 +1,56 @@
+# 🔹 Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 🔹 Virtual environment
+venv/
+env/
+.venv/
+health_pred/
+
+# 🔹 Environment variables
+.env
+
+# 🔹 Logs
+*.log
+
+# 🔹 OS files
+.DS_Store
+Thumbs.db
+
+# 🔹 IDE files
+.vscode/
+.idea/
+
+# 🔹 Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# 🔹 Model files (IMPORTANT - don't push ML models)
+*.pkl
+*.joblib
+
+# 🔹 Temporary files
+*.tmp
+*.temp
+
+# 🔹 Build files
+dist/
+build/
+
+# 🔹 SQLite database (if you add later)
+*.db
+
+# 🔹 Node modules (if frontend inside same repo)
+node_modules/
+
+# 🔹 Coverage reports
+.coverage
+htmlcov/
+
+# 🔹 FastAPI/Uvicorn reload files
+*.reload
+
+# 🔹 Test cache
+.pytest_cache/
