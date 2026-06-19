@@ -1,12 +1,11 @@
 from fastapi import APIRouter
 
-# Create router object
 router = APIRouter()
 
-# Health check endpoint
 @router.get("/health")
-def check_health():
+def health_check():
+
     return {
-        "status": "OK",
-        "message": "Server is running successfully"
+        "status": "healthy",
+        "message": "Backend is running successfully"
     }

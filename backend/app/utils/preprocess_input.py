@@ -1,18 +1,13 @@
-def preprocess_input(data):
-    """
-    Converts input data into model-ready format
-    """
+import numpy as np
 
-    # 🔹 Extract values from schema
+def preprocess_input(data):
+
     fever = data.fever
     headache = data.headache
     fatigue = data.fatigue
 
-    # 🔹 Convert to list (order must match ML training data)
-    processed_data = [
-        fever,
-        headache,
-        fatigue
-    ]
+    processed_data = np.array([
+        [fever, headache, fatigue]
+    ])
 
     return processed_data

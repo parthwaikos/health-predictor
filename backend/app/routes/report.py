@@ -2,9 +2,10 @@ from fastapi import APIRouter
 
 router = APIRouter()
 
-@router.post("/generate-report")
-def generate_report(data: dict):
+@router.get("/report")
+def report_status():
+
     return {
-        "message": "Report generated successfully",
-        "report": data
+        "success": True,
+        "message": "Report service active"
     }

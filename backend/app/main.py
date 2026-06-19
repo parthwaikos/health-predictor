@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-# Import your routes
-from app.routes import prediction , chatbot, report
+# Import routes
+from app.routes import prediction, chatbot, report, health
 
 # Create FastAPI app
 app = FastAPI(
@@ -11,23 +11,24 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# Enable CORS (needed for frontend connection)
+# Enable CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],   # allow all (change later for security)
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Include all routes
+# Include routers
 app.include_router(prediction.router, prefix="/api")
 app.include_router(chatbot.router, prefix="/api")
 app.include_router(report.router, prefix="/api")
+app.include_router(health.router, prefix="/api")
 
-# Root endpoint (test if server is running)
+# Root route
 @app.get("/")
 def root():
     return {
         "message": "AI Health Assistant API is running 🚀"
-    }
+    }           
